@@ -1,0 +1,11 @@
+name: awsImpl
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: This is an example for pulumi and python for AWS
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python

@@ -1,0 +1,27 @@
+config:
+  aws:region: us-west-2
+  #aws:region: us-east-1
+  awsImpl:values:
+    proyecto: pulumi
+    vpc_address: 10.0.0.0/16
+    subnet_priv_address:
+      - 10.0.1.0/24
+      - 10.0.2.0/24
+      - 10.0.3.0/24
+    subnet_pub_address:
+      - 10.0.4.0/24
+      - 10.0.5.0/24
+      - 10.0.6.0/24
+    subnet_zones:
+      - "us-west-2a"
+      - "us-west-2b"
+      - "us-west-2c"
+      #- "us-east-1a"
+      #- "us-east-1b"
+      #- "us-east-1c"
+    tags:
+      area: "devops"
+      centro-costos: "esto es de uso para facturacion"
+      Name: devops-pulumi
+      responsable: "Jthan24"
+      repositorio: "https://github.com/jthan24/cncf-pulumi-iac-aws"

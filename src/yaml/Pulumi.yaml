@@ -1,0 +1,24 @@
+name: awsImpl
+runtime: yaml
+description: This is an example using pulumi and YAML for AWS
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-yaml
+outputs:
+  # VPC creado
+  bucketName: ${vpc-devops.id}
+resources:
+  # VPC
+  vpc-devops:
+    type: awsx:ec2:DefaultVpc
+    properties:
+      cidrBlock: 10.0.0.0/16
+      numberOfAvailabilityZones: 3
+      subnetSpecs:
+        - type: "Public"
+          cidrMask: 22
+        - type: "Private"
+          cidrMask: 20
+      natGateways:
+        strategy: Single
